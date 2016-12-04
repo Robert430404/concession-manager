@@ -27,6 +27,9 @@
 !bin/symfony_requirements
 /vendor/
 
+# Homestead Adapter
+/web/index.php
+
 # Assets and user uploads
 /web/bundles/
 /web/uploads/
