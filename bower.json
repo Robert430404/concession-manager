@@ -2,6 +2,7 @@
   "name": "concession-manager",
   "description": "This is a concessions POS application",
   "dependencies": {
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "foundation": "^5.5.3"
   }
 }
