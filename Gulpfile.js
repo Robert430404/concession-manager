@@ -1,8 +1,9 @@
 'use strict';
 
-var gulp  = require('gulp');
-var sass  = require('gulp-sass');
-var babel = require('gulp-babel');
+const gulp  = require('gulp'),
+     sass  = require('gulp-sass'),
+     babel = require('gulp-babel'),
+     watch = require('gulp-watch');
 
 gulp.task('sass', function () {
     return gulp.src('web/bundles/AppBundle/scss/app.scss')
@@ -17,3 +18,12 @@ gulp.task('babel', function () {
         }))
         .pipe(gulp.dest('web/assets/js'));
 });
+
+gulp.task('watch', function(){
+    gulp.watch('web/bundles/AppBundle/js/**/*.js', ['babel']);
+    gulp.watch('web/bundles/AppBundle/scss/app.scss', ['sass']);
+    gulp.watch('web/bundles/AppBundle/scss/**/*.scss', ['sass']);
+});
+
+gulp.task('default', ['sass', 'babel', 'watch']);
+
